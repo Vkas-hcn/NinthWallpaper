@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="-32dp"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="34dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_item_main"
+            android:layout_width="107dp"
+            android:layout_height="226dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_88"/>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
