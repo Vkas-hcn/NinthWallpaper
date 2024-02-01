@@ -1,8 +1,16 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'stringfog'
 }
-
+import com.github.megatronking.stringfog.plugin.kg.RandomKeyGenerator
+import com.github.megatronking.stringfog.plugin.StringFogMode
+stringfog {
+    implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
+    enable true
+    kg new RandomKeyGenerator()
+    mode StringFogMode.base64
+}
 android {
     namespace 'com.best.ninth.app.ninthwallpaper'
     compileSdk 34
@@ -19,7 +27,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
@@ -41,6 +49,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.github.megatronking.stringfog:xor:4.0.1'
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
