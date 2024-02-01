@@ -23,7 +23,7 @@ class NetActivity : AppCompatActivity() {
         initWebView()
     }
     private fun initWebView() {
-        binding.webViewPrivacyAgreement.loadUrl("https://www.baidu.com")
+        binding.webViewPrivacyAgreement.loadUrl(ClockUtils.agreementUrl)
         binding.webViewPrivacyAgreement.webViewClient = object : android.webkit.WebViewClient() {
             override fun shouldOverrideUrlLoading(view: android.webkit.WebView?, url: String?): Boolean {
                 view?.loadUrl(url!!)

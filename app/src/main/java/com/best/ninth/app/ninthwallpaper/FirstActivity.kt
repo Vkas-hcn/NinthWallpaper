@@ -14,6 +14,7 @@ import com.best.ninth.app.ninthwallpaper.databinding.ActivityFirstBinding
 import com.best.ninth.app.ninthwallpaper.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -57,13 +58,13 @@ class FirstActivity : AppCompatActivity() {
                 Log.e("TAG", "The blacklist request is successful：$it")
                 ClockUtils.ninth_black_key = it
             }, onError = {
-                retry(it,context)
+                ClockUtils.blackUrl.retry(it,context)
             })
         }
     }
 
     private fun String.retry(it: String,context: Context) {
-        lifecycleScope.launch(Dispatchers.IO) {
+        GlobalScope.launch(Dispatchers.IO) {
             delay(10002)
             Log.e("TAG", "The blacklist request failed：$it")
             this@retry.getBlackList(context)

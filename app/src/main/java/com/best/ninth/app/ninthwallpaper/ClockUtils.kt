@@ -8,7 +8,7 @@ import java.util.UUID
 
 object ClockUtils {
     const val agreementUrl = "https://www.baidu.com"
-    const val blackUrl = "https://marina.wallpaperscenic.com/quote/jew/appendix"
+    const val blackUrl = "https://helmet.scapewallpaperengine.com/dense/falmouth"
     private val sharedPreferences by lazy {
         App.instance.getSharedPreferences(
             "NinthWallpaper",
@@ -60,25 +60,23 @@ object ClockUtils {
     fun cloakMapData(context: Context): Map<String, Any> {
         return mapOf<String, Any>(
             //distinct_id
-            "twaddle" to (ninth_id),
+            "basalt" to (ninth_id),
             //client_ts
-            "crevice" to (System.currentTimeMillis()),
+            "onyx" to (System.currentTimeMillis()),
             //device_model
-            "vector" to Build.MODEL,
+            "glissade" to Build.MODEL,
             //bundle_id
-            "spill" to ("com.wallpaper.scenic.views.nature"),
+            "swelt" to ("com.scapewallpaper.engine"),
             //os_version
-            "sprocket" to Build.VERSION.RELEASE,
+            "bathrobe" to Build.VERSION.RELEASE,
             //gaid
-            "section" to "",
+            "fairfax" to "",
             //android_id
-            "eng" to context.getAppId(),
+            "flash" to context.getAppId(),
             //os
-            "compact" to "kola",
+            "j" to "cardioid",
             //app_version
-            "vought" to context.getAppVersion(),
-            //network_type
-            "leopard" to "",
+            "piggy" to context.getAppVersion(),
         )
     }
 

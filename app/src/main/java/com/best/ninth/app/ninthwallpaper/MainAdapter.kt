@@ -32,7 +32,6 @@ class MainAdapter(private val context: Context, private var dataList: List<Int>)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        getSpanSize(holder,position)
         Glide.with(context)
             .load(NinthUtils.allList[position])
             .thumbnail(0.12f)
@@ -42,12 +41,17 @@ class MainAdapter(private val context: Context, private var dataList: List<Int>)
         holder.itemView.setOnClickListener {
             listener?.onItemClick(position)
         }
+        resetViewVisibility(holder)
+        getSpanSize(holder,position)
     }
 
     override fun getItemCount(): Int {
         return dataList.size
     }
-
+    private fun resetViewVisibility(holder: ViewHolder) {
+        holder.view_1.visibility = View.VISIBLE
+        holder.view_2.visibility = View.VISIBLE
+    }
     private fun getSpanSize(holder: ViewHolder, position: Int) {
         when (position % 3) {
             1 -> {
